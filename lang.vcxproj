@@ -19,7 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\conditional.cpp" />
+    <ClCompile Include="src\func.cpp" />
+    <ClCompile Include="src\io.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\maths.cpp" />
+    <ClCompile Include="src\stringops.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\conditional.h" />
+    <ClInclude Include="src\func.h" />
+    <ClInclude Include="src\includes.h" />
+    <ClInclude Include="src\io.h" />
+    <ClInclude Include="src\maths.h" />
+    <ClInclude Include="src\stringops.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -1,6 +1,6 @@
-#include <string>
-#include <unordered_map>
-using std::string;
+#include "stringops.h"
+#include "includes.h"
+
 
 std::vector<string> split(string str, char chr)
 {

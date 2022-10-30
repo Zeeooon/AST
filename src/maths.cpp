@@ -1,8 +1,6 @@
-#include <string>
-#include <unordered_map>
-
+#include "maths.h"
 #include "stringops.h"
-using std::string;
+#include "includes.h"
 
 void add(string line, std::unordered_map<string, string> &map)
 {

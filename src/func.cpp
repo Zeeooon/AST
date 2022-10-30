@@ -11,7 +11,9 @@ void inc(string line);
 
 std::unordered_map<string, string> vars;
 std::unordered_map<string, string> funcmap;
+//map of every command in function
 std::unordered_map<string, string> tempmap;
+
 string retvar;
 bool retur;
 
@@ -71,19 +73,25 @@ void loop(string line, std::unordered_map<string, string>& map)
 }
 void func(string line, std::unordered_map<string, string>& map)
 {
+    for (auto x : map)
+    {
+        vars[x.first] = x.second;
+    }
     retur = true;
     //actual function code
     string func = funcmap.find(line.substr(0, line.find(' ')))->second;
     //variables to be inputted into the program
     std::vector<string> ivars = split(line.substr(line.find(' ') + 1, line.size()), ' ');
     retvar = ivars[0];
-    //pulls function into seperate words
+    //pulls function into seperate lines
+    //pulls parameters from to be used into function
     std::vector<string> params = split(func.substr(0, func.find('{')), ' ');
     for (int i = 0; i < params.size(); i++)
     {
         tempmap[params[i]] = map[ivars[i]];
     }
     map.clear();
+
     for (auto x : tempmap)
     {
         map[x.first] = x.second;
@@ -114,5 +122,9 @@ void inc(string line)
 void ret(string line, std::unordered_map<string, string>& map)
 {
     vars[retvar] = map.find(line)->second;
-    retur = false;
+    retur = false; 
+    for (auto x : vars)
+    {
+        map[x.first] = x.second;
+    }  
 }

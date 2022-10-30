@@ -1,7 +1,5 @@
 #pragma once
-#include <string>
-#include <unordered_map>
-using std::string;
+#include "includes.h"
 
 std::vector<string> split(string str, char chr);
 string parse(string s);
